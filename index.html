@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unlockly - Complete Tasks to Unlock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f1f3f7;
+      color: #333;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 30px;
+    }
+    .task {
+      background: #fff;
+      border-left: 5px solid #28a745;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    }
+    .task label {
+      flex-grow: 1;
+    }
+    .task a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .unlock {
+      margin-top: 30px;
+      padding: 20px;
+      background: #e1f8e6;
+      border: 2px solid #28a745;
+      border-radius: 10px;
+      display: none;
+      text-align: center;
+    }
+    .unlock a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #155724;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Complete All Tasks to Unlock the Download</h2>
+
+  <div class="task">
+    <input type="checkbox" id="ytsub">
+    <label><a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">Subscribe to our YouTube Channel</a></label>
+  </div>
+
+  <div class="task">
+    <input type="checkbox" id="ytlike">
+    <label><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank">Like our YouTube Video</a></label>
+  </div>
+
+  <div class="task">
+    <input type="checkbox" id="discord">
+    <label><a href="https://discord.gg/YOUR_DISCORD" target="_blank">Join our Discord Server</a></label>
+  </div>
+
+  <div class="task">
+    <input type="checkbox" id="telegram">
+    <label><a href="https://t.me/YOUR_TELEGRAM" target="_blank">Join our Telegram Channel</a></label>
+  </div>
+
+  <button onclick="checkTasks()">Verify & Unlock</button>
+
+  <div class="unlock" id="unlockDiv">
+    <h3>Unlocked Successfully!</h3>
+    <p>Here’s your download link:</p>
+    <a href="https://example.com/your-download.zip" target="_blank">Download Now</a>
+  </div>
+
+  <script>
+    function checkTasks() {
+      const allChecked = ['ytsub', 'ytlike', 'discord', 'telegram']
+        .every(id => document.getElementById(id).checked);
+
+      if (allChecked) {
+        document.getElementById('unlockDiv').style.display = 'block';
+      } else {
+        alert("Please complete all tasks before unlocking.");
+      }
+    }
+  </script>
+
+</body>
+</html>
